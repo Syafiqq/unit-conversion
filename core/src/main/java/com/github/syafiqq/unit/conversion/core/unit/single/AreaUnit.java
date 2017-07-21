@@ -23,7 +23,7 @@ public enum AreaUnit
 
     static final double MAX = Double.MAX_VALUE;
 
-    final double base;
+    public final double base;
 
     AreaUnit(double base)
     {
@@ -43,7 +43,7 @@ public enum AreaUnit
         return d * m;
     }
 
-    public double from(AreaUnit sourceUnit, double sourceArea)
+    public double to(AreaUnit sourceUnit, double sourceArea)
     {
         return eval(sourceArea, this.base / sourceUnit.base, MAX / (this.base / sourceUnit.base));
     }
