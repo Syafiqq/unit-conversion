@@ -1,2 +1,3 @@
 rootProject.name = 'unit-conversion'
+include 'core'
 
