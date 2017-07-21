@@ -10,17 +10,17 @@ import org.junit.Test;
  * Email        : syafiq.rezpector@gmail.com
  * Github       : syafiqq
  */
-public class AreaDensityTest
+public class AreaDensityUnitTest
 {
     @Test
     public void it_converse_t_p_ha_to_t_p_m2()
     {
-        Assert.assertEquals(1E0, AreaDensity.TONNE_PER_HECTARE.to(AreaDensity.TONNE_PER_SQUARE_METER, 1E4), 0.0);
+        Assert.assertEquals(1E0, AreaDensityUnit.TONNE_PER_HECTARE.to(AreaDensityUnit.TONNE_PER_SQUARE_METER, 1E4), 0.0);
     }
 
     @Test
     public void it_converse_t_p_ha_to_kg_p_m2()
     {
-        Assert.assertEquals(1E3, AreaDensity.TONNE_PER_HECTARE.to(AreaDensity.KILOGRAM_PER_SQUARE_METER, 1E4), 0.0);
+        Assert.assertEquals(1E3, AreaDensityUnit.TONNE_PER_HECTARE.to(AreaDensityUnit.KILOGRAM_PER_SQUARE_METER, 1E4), 0.0);
     }
 }
