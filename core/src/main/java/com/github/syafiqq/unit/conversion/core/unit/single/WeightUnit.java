@@ -23,7 +23,7 @@ public enum WeightUnit
 
     static final double MAX = Double.MAX_VALUE;
 
-    final double base;
+    public final double base;
 
     WeightUnit(double base)
     {
@@ -43,7 +43,7 @@ public enum WeightUnit
         return d * m;
     }
 
-    public double from(WeightUnit sourceUnit, double sourceArea)
+    public double to(WeightUnit sourceUnit, double sourceArea)
     {
         return eval(sourceArea, this.base / sourceUnit.base, MAX / (this.base / sourceUnit.base));
     }
