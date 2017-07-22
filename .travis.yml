@@ -32,3 +32,4 @@ cache:
 
 script:
   - ./gradlew assemble
+  - ./gradlew testExceptGenerator
