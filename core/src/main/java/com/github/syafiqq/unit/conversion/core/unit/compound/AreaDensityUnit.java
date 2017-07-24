@@ -2,6 +2,7 @@ package com.github.syafiqq.unit.conversion.core.unit.compound;
 
 import com.github.syafiqq.unit.conversion.core.unit.single.AreaUnit;
 import com.github.syafiqq.unit.conversion.core.unit.single.WeightUnit;
+import com.github.syafiqq.unit.conversion.core.util.Conversion;
 
 /*
  * This <unit-conversion> created by : 
@@ -10,7 +11,7 @@ import com.github.syafiqq.unit.conversion.core.unit.single.WeightUnit;
  * Email        : syafiq.rezpector@gmail.com
  * Github       : syafiqq
  */
-public enum AreaDensityUnit
+public enum AreaDensityUnit implements Conversion<AreaDensityUnit>
 {
     KILLOTONNE_PER_SQUARE_MILLIMETER(WeightUnit.KILLOTONNE, AreaUnit.SQUARE_MILLIMETER),
     KILLOTONNE_PER_SQUARE_CENTIMETER(WeightUnit.KILLOTONNE, AreaUnit.SQUARE_CENTIMETER),
@@ -146,14 +147,19 @@ public enum AreaDensityUnit
         return d * m;
     }
 
-    public double to(AreaDensityUnit sourceUnit, double sourceArea)
+    @Override public double to(AreaDensityUnit to, double value, double base)
     {
-        return this.to(sourceUnit.weight, sourceUnit.area, sourceArea);
+        return this.to(to.weight, to.area, value, base);
     }
 
-    private double to(WeightUnit weight, AreaUnit area, double sourceArea)
+    @Override public double to(AreaDensityUnit to, double value)
     {
-        double calculate = (this.weight.base / weight.base) / (this.area.base / area.base);
-        return eval(sourceArea, (calculate), MAX / (calculate));
+        return this.to(to, value, 1.0);
+    }
+
+    public double to(WeightUnit weight, AreaUnit area, double value, double base)
+    {
+        final double calculate = (this.weight.base / weight.base) / (this.area.base / area.base) / base;
+        return eval(value, (calculate), MAX / (calculate));
     }
 }

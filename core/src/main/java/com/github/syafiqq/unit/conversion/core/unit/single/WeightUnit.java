@@ -1,5 +1,7 @@
 package com.github.syafiqq.unit.conversion.core.unit.single;
 
+import com.github.syafiqq.unit.conversion.core.util.Conversion;
+
 /*
  * This <unit-conversion> created by : 
  * Name         : syafiq
@@ -7,7 +9,7 @@ package com.github.syafiqq.unit.conversion.core.unit.single;
  * Email        : syafiq.rezpector@gmail.com
  * Github       : syafiqq
  */
-public enum WeightUnit
+public enum WeightUnit implements Conversion<WeightUnit>
 {
     KILLOTONNE(1.0E9),
     TONNE(1.0E6),
@@ -43,9 +45,15 @@ public enum WeightUnit
         return d * m;
     }
 
-    public double to(WeightUnit sourceUnit, double sourceArea)
+    @Override public double to(WeightUnit to, double value)
     {
-        return eval(sourceArea, this.base / sourceUnit.base, MAX / (this.base / sourceUnit.base));
+        return this.to(to, value, 1.0);
+    }
+
+    @Override public double to(WeightUnit to, double value, double base)
+    {
+        final double calculate = this.base / to.base / base;
+        return eval(value, calculate, MAX / (calculate));
     }
 }
 
