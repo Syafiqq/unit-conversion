@@ -1,5 +1,7 @@
 package com.github.syafiqq.unit.conversion.core.unit.single;
 
+import com.github.syafiqq.unit.conversion.core.util.Conversion;
+
 /*
  * This <unit-conversion> created by : 
  * Name         : syafiq
@@ -7,7 +9,7 @@ package com.github.syafiqq.unit.conversion.core.unit.single;
  * Email        : syafiq.rezpector@gmail.com
  * Github       : syafiqq
  */
-public enum AreaUnit
+public enum AreaUnit implements Conversion<AreaUnit>
 {
     SQUARE_MILLIMETER(1.0E-6),
     SQUARE_CENTIMETER(1.0E-4),
@@ -43,8 +45,14 @@ public enum AreaUnit
         return d * m;
     }
 
-    public double to(AreaUnit sourceUnit, double sourceArea)
+    @Override public double to(AreaUnit to, double value)
     {
-        return eval(sourceArea, this.base / sourceUnit.base, MAX / (this.base / sourceUnit.base));
+        return this.to(to, value, 1);
+    }
+
+    @Override public double to(AreaUnit to, double value, double base)
+    {
+        final double calculate = this.base / to.base / base;
+        return eval(value, calculate, MAX / (calculate));
     }
 }
