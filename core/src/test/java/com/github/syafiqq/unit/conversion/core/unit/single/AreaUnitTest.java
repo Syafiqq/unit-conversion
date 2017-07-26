@@ -17,17 +17,17 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit kilometers = AreaUnit.SQUARE_KILOMETERS;
-        Assert.assertEquals(1.0E0000, kilometers.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, kilometers.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0004, kilometers.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0006, kilometers.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0008, kilometers.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0010, kilometers.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0012, kilometers.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, kilometers, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, kilometers, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0004, AreaUnit.converse(area, kilometers, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0006, AreaUnit.converse(area, kilometers, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E0008, AreaUnit.converse(area, kilometers, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0010, AreaUnit.converse(area, kilometers, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0012, AreaUnit.converse(area, kilometers, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E0002, kilometers.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0003, kilometers.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0004, kilometers.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, kilometers, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E0003, AreaUnit.converse(area, kilometers, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E0004, AreaUnit.converse(area, kilometers, AreaUnit.ARE), 1.0E-5);
     }
 
     @Test
@@ -35,17 +35,17 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit squareHectometer = AreaUnit.SQUARE_HECTOMETER;
-        Assert.assertEquals(1.0E-002, squareHectometer.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, squareHectometer.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, squareHectometer.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0004, squareHectometer.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0006, squareHectometer.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0008, squareHectometer.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0010, squareHectometer.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, squareHectometer, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, squareHectometer, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, squareHectometer, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0004, AreaUnit.converse(area, squareHectometer, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E0006, AreaUnit.converse(area, squareHectometer, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0008, AreaUnit.converse(area, squareHectometer, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0010, AreaUnit.converse(area, squareHectometer, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E0000, squareHectometer.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0001, squareHectometer.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, squareHectometer.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, squareHectometer, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E0001, AreaUnit.converse(area, squareHectometer, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, squareHectometer, AreaUnit.ARE), 1.0E-5);
     }
 
     @Test
@@ -53,17 +53,17 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit squareDecameter = AreaUnit.SQUARE_DECAMETER;
-        Assert.assertEquals(1.0E-004, squareDecameter.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E-002, squareDecameter.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, squareDecameter.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, squareDecameter.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0004, squareDecameter.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0006, squareDecameter.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0008, squareDecameter.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E-004, AreaUnit.converse(area, squareDecameter, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, squareDecameter, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, squareDecameter, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, squareDecameter, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E0004, AreaUnit.converse(area, squareDecameter, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0006, AreaUnit.converse(area, squareDecameter, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0008, AreaUnit.converse(area, squareDecameter, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E-002, squareDecameter.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-001, squareDecameter.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, squareDecameter.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, squareDecameter, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E-001, AreaUnit.converse(area, squareDecameter, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, squareDecameter, AreaUnit.ARE), 1.0E-5);
     }
 
     @Test
@@ -71,17 +71,17 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit squareMeter = AreaUnit.SQUARE_METER;
-        Assert.assertEquals(1.0E-006, squareMeter.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E-004, squareMeter.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-002, squareMeter.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, squareMeter.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, squareMeter.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0004, squareMeter.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0006, squareMeter.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E-006, AreaUnit.converse(area, squareMeter, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E-004, AreaUnit.converse(area, squareMeter, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, squareMeter, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, squareMeter, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, squareMeter, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0004, AreaUnit.converse(area, squareMeter, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0006, AreaUnit.converse(area, squareMeter, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E-004, squareMeter.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-003, squareMeter.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-002, squareMeter.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E-004, AreaUnit.converse(area, squareMeter, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E-003, AreaUnit.converse(area, squareMeter, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, squareMeter, AreaUnit.ARE), 1.0E-5);
     }
 
     @Test
@@ -89,17 +89,17 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit squareDecimeter = AreaUnit.SQUARE_DECIMETER;
-        Assert.assertEquals(1.0E-008, squareDecimeter.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E-006, squareDecimeter.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-004, squareDecimeter.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-002, squareDecimeter.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, squareDecimeter.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, squareDecimeter.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0004, squareDecimeter.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E-008, AreaUnit.converse(area, squareDecimeter, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E-006, AreaUnit.converse(area, squareDecimeter, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E-004, AreaUnit.converse(area, squareDecimeter, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, squareDecimeter, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, squareDecimeter, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, squareDecimeter, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0004, AreaUnit.converse(area, squareDecimeter, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E-006, squareDecimeter.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-005, squareDecimeter.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-004, squareDecimeter.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E-006, AreaUnit.converse(area, squareDecimeter, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E-005, AreaUnit.converse(area, squareDecimeter, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E-004, AreaUnit.converse(area, squareDecimeter, AreaUnit.ARE), 1.0E-5);
     }
 
     @Test
@@ -107,17 +107,17 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit squareCentimeter = AreaUnit.SQUARE_CENTIMETER;
-        Assert.assertEquals(1.0E-010, squareCentimeter.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E-008, squareCentimeter.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-006, squareCentimeter.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-004, squareCentimeter.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-002, squareCentimeter.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, squareCentimeter.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, squareCentimeter.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E-010, AreaUnit.converse(area, squareCentimeter, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E-008, AreaUnit.converse(area, squareCentimeter, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E-006, AreaUnit.converse(area, squareCentimeter, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E-004, AreaUnit.converse(area, squareCentimeter, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, squareCentimeter, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, squareCentimeter, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, squareCentimeter, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E-008, squareCentimeter.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-007, squareCentimeter.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-006, squareCentimeter.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E-008, AreaUnit.converse(area, squareCentimeter, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E-007, AreaUnit.converse(area, squareCentimeter, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E-006, AreaUnit.converse(area, squareCentimeter, AreaUnit.ARE), 1.0E-5);
     }
 
     @Test
@@ -125,17 +125,17 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit squareMillimeter = AreaUnit.SQUARE_MILLIMETER;
-        Assert.assertEquals(1.0E-012, squareMillimeter.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E-010, squareMillimeter.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-008, squareMillimeter.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-006, squareMillimeter.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-004, squareMillimeter.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E-002, squareMillimeter.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, squareMillimeter.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E-012, AreaUnit.converse(area, squareMillimeter, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E-010, AreaUnit.converse(area, squareMillimeter, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E-008, AreaUnit.converse(area, squareMillimeter, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E-006, AreaUnit.converse(area, squareMillimeter, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E-004, AreaUnit.converse(area, squareMillimeter, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, squareMillimeter, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, squareMillimeter, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E-010, squareMillimeter.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-009, squareMillimeter.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-008, squareMillimeter.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E-010, AreaUnit.converse(area, squareMillimeter, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E-009, AreaUnit.converse(area, squareMillimeter, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E-008, AreaUnit.converse(area, squareMillimeter, AreaUnit.ARE), 1.0E-5);
     }
 
     @Test
@@ -143,17 +143,17 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit hectare = AreaUnit.HECTARE;
-        Assert.assertEquals(1.0E-002, hectare.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, hectare.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, hectare.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0004, hectare.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0006, hectare.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0008, hectare.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0010, hectare.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, hectare, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, hectare, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, hectare, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0004, AreaUnit.converse(area, hectare, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E0006, AreaUnit.converse(area, hectare, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0008, AreaUnit.converse(area, hectare, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0010, AreaUnit.converse(area, hectare, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E0000, hectare.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0001, hectare.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, hectare.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, hectare, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E0001, AreaUnit.converse(area, hectare, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, hectare, AreaUnit.ARE), 1.0E-5);
     }
 
     @Test
@@ -161,17 +161,17 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit decare = AreaUnit.DECARE;
-        Assert.assertEquals(1.0E-003, decare.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E-001, decare.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0001, decare.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0003, decare.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0005, decare.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0007, decare.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0009, decare.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E-003, AreaUnit.converse(area, decare, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E-001, AreaUnit.converse(area, decare, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0001, AreaUnit.converse(area, decare, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0003, AreaUnit.converse(area, decare, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E0005, AreaUnit.converse(area, decare, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0007, AreaUnit.converse(area, decare, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0009, AreaUnit.converse(area, decare, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E-001, decare.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, decare.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0001, decare.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E-001, AreaUnit.converse(area, decare, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, decare, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E0001, AreaUnit.converse(area, decare, AreaUnit.ARE), 1.0E-5);
     }
 
     @Test
@@ -179,16 +179,16 @@ public class AreaUnitTest
     {
         double area = 1.0;
         AreaUnit decare = AreaUnit.ARE;
-        Assert.assertEquals(1.0E-004, decare.to(AreaUnit.SQUARE_KILOMETERS, area), 1.0E-5);
-        Assert.assertEquals(1.0E-002, decare.to(AreaUnit.SQUARE_HECTOMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, decare.to(AreaUnit.SQUARE_DECAMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0002, decare.to(AreaUnit.SQUARE_METER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0004, decare.to(AreaUnit.SQUARE_DECIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0006, decare.to(AreaUnit.SQUARE_CENTIMETER, area), 1.0E-5);
-        Assert.assertEquals(1.0E0008, decare.to(AreaUnit.SQUARE_MILLIMETER, area), 1.0E-5);
+        Assert.assertEquals(1.0E-004, AreaUnit.converse(area, decare, AreaUnit.SQUARE_KILOMETERS), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, decare, AreaUnit.SQUARE_HECTOMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, decare, AreaUnit.SQUARE_DECAMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0002, AreaUnit.converse(area, decare, AreaUnit.SQUARE_METER), 1.0E-5);
+        Assert.assertEquals(1.0E0004, AreaUnit.converse(area, decare, AreaUnit.SQUARE_DECIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0006, AreaUnit.converse(area, decare, AreaUnit.SQUARE_CENTIMETER), 1.0E-5);
+        Assert.assertEquals(1.0E0008, AreaUnit.converse(area, decare, AreaUnit.SQUARE_MILLIMETER), 1.0E-5);
 
-        Assert.assertEquals(1.0E-002, decare.to(AreaUnit.HECTARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E-001, decare.to(AreaUnit.DECARE, area), 1.0E-5);
-        Assert.assertEquals(1.0E0000, decare.to(AreaUnit.ARE, area), 1.0E-5);
+        Assert.assertEquals(1.0E-002, AreaUnit.converse(area, decare, AreaUnit.HECTARE), 1.0E-5);
+        Assert.assertEquals(1.0E-001, AreaUnit.converse(area, decare, AreaUnit.DECARE), 1.0E-5);
+        Assert.assertEquals(1.0E0000, AreaUnit.converse(area, decare, AreaUnit.ARE), 1.0E-5);
     }
 }
