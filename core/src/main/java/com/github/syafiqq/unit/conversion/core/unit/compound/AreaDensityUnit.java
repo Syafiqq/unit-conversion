@@ -146,11 +146,21 @@ public enum AreaDensityUnit
         return d * m;
     }
 
-    //=================================================================================================================
-
     public static double converse(AreaDensityUnit fromUnit, AreaDensityUnit toUnit)
     {
-        return converse(1.0, fromUnit.weight, 1.0, fromUnit.area, 1.0, toUnit.weight, 1.0, toUnit.area);
+        return converse(1.0, fromUnit.getWeight(), 1.0, fromUnit.getArea(), 1.0, toUnit.getWeight(), 1.0, toUnit.getArea());
+    }
+
+    public static double converse(double wFVal, double aFVal, AreaDensityUnit fromUnit, AreaDensityWrapper<? extends Number> to)
+    {
+        return converse(wFVal, fromUnit.getWeight(), aFVal, fromUnit.getArea(), to);
+    }
+
+    //=================================================================================================================
+
+    public static double converse(AreaDensityWrapper<? extends Number> from, double wTVal, double aTVal, AreaDensityUnit toUnit)
+    {
+        return converse(from, wTVal, toUnit.getWeight(), aTVal, toUnit.getArea());
     }
 
     public static double converse(AreaDensityWrapper<? extends Number> from, AreaDensityWrapper<? extends Number> to)
@@ -165,9 +175,9 @@ public enum AreaDensityUnit
         return converse(1.0, 1.0, fromUnit, to);
     }
 
-    public static double converse(double wFVal, double aFVal, AreaDensityUnit fromUnit, AreaDensityWrapper<? extends Number> to)
+    public static double converse(double wFVal, AreaDensityUnit fromUnit, double wTVal, AreaDensityUnit toUnit)
     {
-        return converse(wFVal, fromUnit.weight, aFVal, fromUnit.area, to);
+        return converse(wFVal, fromUnit.getWeight(), 1.0, fromUnit.getArea(), wTVal, toUnit.getWeight(), 1.0, toUnit.getArea());
     }
 
     private static double converse(double wFVal, WeightUnit wFUnit, double aFVal, AreaUnit aFUnit, AreaDensityWrapper<? extends Number> to)
@@ -182,9 +192,9 @@ public enum AreaDensityUnit
         return converse(from, 1.0, 1.0, toUnit);
     }
 
-    public static double converse(AreaDensityWrapper<? extends Number> from, double wTVal, double aTVal, AreaDensityUnit toUnit)
+    public static double converse(AreaDensityUnit fromUnit, double wTVal, AreaDensityUnit toUnit)
     {
-        return converse(from, wTVal, toUnit.weight, aTVal, toUnit.area);
+        return converse(1.0, fromUnit.getWeight(), 1.0, fromUnit.getArea(), wTVal, toUnit.getWeight(), 1.0, toUnit.getArea());
     }
 
     private static double converse(AreaDensityWrapper<? extends Number> from, double wTVal, WeightUnit wTUnit, double aTVal, AreaUnit aTUnit)
@@ -194,46 +204,46 @@ public enum AreaDensityUnit
 
     //=================================================================================================================
 
-    public static double converse(double wFVal, AreaDensityUnit fromUnit, double wTVal, AreaDensityUnit toUnit)
-    {
-        return converse(wFVal, fromUnit.weight, 1.0, fromUnit.area, wTVal, toUnit.weight, 1.0, toUnit.area);
-    }
-
-    public static double converse(AreaDensityUnit fromUnit, double wTVal, AreaDensityUnit toUnit)
-    {
-        return converse(1.0, fromUnit.weight, 1.0, fromUnit.area, wTVal, toUnit.weight, 1.0, toUnit.area);
-    }
-
     public static double converse(AreaDensityUnit fromUnit, double wTVal, double aTVal, AreaDensityUnit toUnit)
     {
-        return converse(1.0, fromUnit.weight, 1.0, fromUnit.area, wTVal, toUnit.weight, aTVal, toUnit.area);
+        return converse(1.0, fromUnit.getWeight(), 1.0, fromUnit.getArea(), wTVal, toUnit.getWeight(), aTVal, toUnit.getArea());
     }
 
     public static double converse(double wFVal, AreaDensityUnit fromUnit, AreaDensityUnit toUnit)
     {
-        return converse(wFVal, fromUnit.weight, 1.0, fromUnit.area, 1.0, toUnit.weight, 1.0, toUnit.area);
+        return converse(wFVal, fromUnit.getWeight(), 1.0, fromUnit.getArea(), 1.0, toUnit.getWeight(), 1.0, toUnit.getArea());
     }
 
     public static double converse(double wFVal, double aFVal, AreaDensityUnit fromUnit, AreaDensityUnit toUnit)
     {
-        return converse(wFVal, fromUnit.weight, aFVal, fromUnit.area, 1.0, toUnit.weight, 1.0, toUnit.area);
+        return converse(wFVal, fromUnit.getWeight(), aFVal, fromUnit.getArea(), 1.0, toUnit.getWeight(), 1.0, toUnit.getArea());
     }
-
-    //=================================================================================================================
 
     public static double converse(double wFVal, double aFVal, AreaDensityUnit fromUnit, double wTVal, AreaDensityUnit toUnit)
     {
-        return converse(wFVal, fromUnit.weight, aFVal, fromUnit.area, wTVal, toUnit.weight, 1.0, toUnit.area);
+        return converse(wFVal, fromUnit.getWeight(), aFVal, fromUnit.getArea(), wTVal, toUnit.getWeight(), 1.0, toUnit.getArea());
     }
 
     public static double converse(double wFVal, AreaDensityUnit fromUnit, double wTVal, double aTVal, AreaDensityUnit toUnit)
     {
-        return converse(wFVal, fromUnit.weight, 1.0, fromUnit.area, wTVal, toUnit.weight, aTVal, toUnit.area);
+        return converse(wFVal, fromUnit.getWeight(), 1.0, fromUnit.getArea(), wTVal, toUnit.getWeight(), aTVal, toUnit.getArea());
     }
+
+    //=================================================================================================================
 
     public static double converse(double wFVal, double aFVal, AreaDensityUnit fromUnit, double wTVal, double aTVal, AreaDensityUnit toUnit)
     {
-        return converse(wFVal, fromUnit.weight, aFVal, fromUnit.area, wTVal, toUnit.weight, aTVal, toUnit.area);
+        return converse(wFVal, fromUnit.getWeight(), aFVal, fromUnit.getArea(), wTVal, toUnit.getWeight(), aTVal, toUnit.getArea());
+    }
+
+    public WeightUnit getWeight()
+    {
+        return this.weight;
+    }
+
+    public AreaUnit getArea()
+    {
+        return this.area;
     }
 
     //=================================================================================================================
