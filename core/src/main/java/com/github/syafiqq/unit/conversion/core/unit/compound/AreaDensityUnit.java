@@ -194,6 +194,11 @@ public enum AreaDensityUnit
 
     //=================================================================================================================
 
+    public static double converse(double wFVal, AreaDensityUnit fromUnit, double wTVal, AreaDensityUnit toUnit)
+    {
+        return converse(wFVal, fromUnit.weight, 1.0, fromUnit.area, wTVal, toUnit.weight, 1.0, toUnit.area);
+    }
+
     public static double converse(AreaDensityUnit fromUnit, double wTVal, AreaDensityUnit toUnit)
     {
         return converse(1.0, fromUnit.weight, 1.0, fromUnit.area, wTVal, toUnit.weight, 1.0, toUnit.area);
