@@ -1,7 +1,5 @@
 package com.github.syafiqq.unit.conversion.core.unit.single;
 
-import com.github.syafiqq.unit.conversion.core.util.Conversion;
-
 /*
  * This <unit-conversion> created by : 
  * Name         : syafiq
@@ -9,7 +7,7 @@ import com.github.syafiqq.unit.conversion.core.util.Conversion;
  * Email        : syafiq.rezpector@gmail.com
  * Github       : syafiqq
  */
-public enum WeightUnit implements Conversion<WeightUnit>
+public enum WeightUnit
 {
     KILLOTONNE(1.0E9),
     TONNE(1.0E6),
@@ -45,15 +43,70 @@ public enum WeightUnit implements Conversion<WeightUnit>
         return d * m;
     }
 
-    @Override public double to(WeightUnit to, double value)
+    //=================================================================================================================
+
+    public static double converse(WeightUnit fromUnit, WeightWrapper<? extends Number> to)
     {
-        return this.to(to, value, 1.0);
+        return converse(1.0, fromUnit, to);
     }
 
-    @Override public double to(WeightUnit to, double value, double base)
+    public static double converse(double fromVal, WeightUnit fromUnit, WeightWrapper<? extends Number> to)
     {
-        final double calculate = this.base / to.base / base;
-        return eval(value, calculate, MAX / (calculate));
+        return converse(fromVal, fromUnit, to.getValue().doubleValue(), to.getUnit());
+    }
+
+    //=================================================================================================================
+
+    public static double converse(WeightWrapper<? extends Number> from, WeightUnit toUnit)
+    {
+        return converse(from, 1.0, toUnit);
+    }
+
+    public static double converse(WeightWrapper<? extends Number> from, double toVal, WeightUnit toUnit)
+    {
+        return converse(from.getValue().doubleValue(), from.getUnit(), toVal, toUnit);
+    }
+
+    //=================================================================================================================
+
+    public static double converse(WeightUnit fromUnit, WeightUnit toUnit)
+    {
+        return converse(1.0, fromUnit, 1.0, toUnit);
+    }
+
+    public static double converse(WeightWrapper<? extends Number> from, WeightWrapper<? extends Number> to)
+    {
+        return converse(from.getValue().doubleValue(), from.getUnit(), to.getValue().doubleValue(), to.getUnit());
+    }
+
+    //=================================================================================================================
+
+
+    public static double converse(WeightUnit fromUnit, double toVal, WeightUnit toUnit)
+    {
+        return converse(1.0, fromUnit, toVal, toUnit);
+    }
+
+    public static double converse(double fromVal, WeightUnit fromUnit, WeightUnit toUnit)
+    {
+        return converse(fromVal, fromUnit, 1.0, toUnit);
+    }
+
+    //=================================================================================================================
+
+    public static double converse(double fromVal, WeightUnit from, double toVal, WeightUnit to)
+    {
+        final double calculate = from.base / to.base / toVal;
+        return eval(fromVal, calculate, MAX / (calculate));
+    }
+
+    //=================================================================================================================
+
+    public static interface WeightWrapper<N extends Number>
+    {
+        public WeightUnit getUnit();
+
+        public N getValue();
     }
 }
 
